@@ -1,5 +1,5 @@
 {
-  "name": "atom-commonform",
+  "name": "commonform",
   "description": "Atom package for Common Form markup",
   "version": "0.0.0",
   "author": {
@@ -10,7 +10,9 @@
   "bugs": {
     "url": "https://github.com/commonform/atom-commonform.js/issues"
   },
-  "engines": {"atom": ">=0.199.0"},
+  "engines": {
+    "atom": ">=0.199.0"
+  },
   "homepage": "https://github.com/commonform/atom-commonform.js",
   "license": "Apache-2.0",
   "repository": {
