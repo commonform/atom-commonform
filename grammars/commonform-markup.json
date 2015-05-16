@@ -1,53 +1,53 @@
 {
   "scopeName": "source.commonform",
-  "fileTypes": [
-    "commonform"
-  ],
+  "fileTypes": ["commonform"],
   "name": "Common Form Markup",
+  "repository": {
+    "use": {
+      "name": "string.unquoted",
+      "begin": "<",
+      "end": ">"
+    },
+    "field": {
+      "name": "variable",
+      "begin": "\\[",
+      "end": "\\]"
+    },
+    "reference": {
+      "name": "keyword",
+      "begin": "{",
+      "end": "}"
+    },
+    "definition": {
+      "name": "constant",
+      "begin": "\"\"",
+      "end": "\"\""
+    },
+    "illegal": {
+      "name": "invalid.illegal",
+      "match": "[^\\x00-\\x7F]"
+    }
+  },
   "patterns": [
     {
-      "comment": "Comment",
       "name": "comment.line",
       "match": "^\\s*#.+"
     },
     {
-      "comment": "summary",
-      "name": "entity.name",
-      "start": "^",
-      "end": "\\(\\\\|\\!\\!\\)"
-    },
-    {
-      "comment": "Use",
-      "name": "string.unquoted",
-      "start": "<",
-      "end": ">"
-    },
-    {
-      "comment": "Field",
-      "name": "variable",
-      "start": "\\[",
-      "end": "\\]"
-    },
-    {
-      "comment": "Reference",
-      "name": "keyword",
-      "start": "{",
-      "end": "}"
-    },
-    {
-      "comment": "Definition",
-      "name": "constant",
-      "start": "\"\"",
-      "end": "\"\""
-    },
-    {
-      "comment": "Conspicuous marker",
-      "name": "storage.modifier",
-      "match": "!!!"
-    },
-    {
-      "name": "invalid.illegal",
-      "match": "[^\\x00-\\x7F]"
+      "comment": "Form",
+      "begin": "^(.+)?((\\\\\\\\)|!!)",
+      "captures": {
+        "1": {"name":"constant.language"},
+        "2": {"name":"storage.modified"}
+      },
+      "end": "$",
+      "patterns": [
+        {"include":"#illegal"},
+        {"include":"#use"},
+        {"include":"#definition"},
+        {"include":"#field"},
+        {"include":"#reference"}
+      ]
     }
   ]
 }
