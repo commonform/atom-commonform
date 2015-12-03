@@ -35,10 +35,11 @@
     },
     {
       "comment": "Form",
-      "begin": "^(.+)?((\\\\\\\\)|!!)",
+      "begin": "^\\s*(\\\\)(.+)?((\\\\)|!!)",
       "captures": {
-        "1": {"name":"constant.language"},
-        "2": {"name":"storage.modified"}
+        "1": {"name":"storage.modified"},
+        "2": {"name":"constant.language"},
+        "3": {"name":"storage.modified"}
       },
       "end": "$",
       "patterns": [
