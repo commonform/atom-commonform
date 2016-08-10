@@ -1,6 +1,6 @@
 {
   "scopeName": "source.commonform",
-  "fileTypes": ["commonform", "cform"],
+  "fileTypes": ["commonform", "cform", "cftemplate"],
   "name": "Common Form Markup",
   "repository": {
     "use": {
